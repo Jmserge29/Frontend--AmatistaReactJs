@@ -1,0 +1,38 @@
+import Aos from "aos"; 
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
+
+const NotesG = () => {
+
+
+    // Funcion que retorna la animación del portafolio
+    useEffect(()=>{
+        Aos.init({ duration: 1000 });
+        }, []);
+    
+    
+    return ( 
+        <div>
+                        <div className='container py-4'>
+                <div class="blog-slider">
+                <div class="blog-slider__wrp ">
+                <div class="blog-slider__item ">
+                    <div class="blog-slider__img">
+                    
+                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt=""/>
+                    </div>
+                    <div class="">
+                    <span class="blog-slider__code">26 December 2019</span>
+                    <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+                    <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+                    <a href="#" class="blog-slider__button">Nota Elaborada</a>
+                    </div>
+                </div>            
+                </div>
+                </div>
+            </div>
+        </div>
+     );
+}
+ 
+export default NotesG;
