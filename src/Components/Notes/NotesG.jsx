@@ -2,7 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 
-const NotesG = () => {
+const NotesG = ({DtaNotesGenerales, CompletedNoteG, UnCompletedNoteG}) => {
 
 
     // Funcion que retorna la animación del portafolio
@@ -12,25 +12,29 @@ const NotesG = () => {
     
     
     return ( 
-        <div>
-                        <div className='container py-4'>
-                <div class="blog-slider">
-                <div class="blog-slider__wrp ">
-                <div class="blog-slider__item ">
-                    <div class="blog-slider__img">
+        <div className="row portfolio-container filter-container" >
+        {DtaNotesGenerales.map((DtaNotesGenerales)=>{
+            return(
+            <div className='container col-md-12 py-2' key={DtaNotesGenerales._id}>
+                <div className="blog-slider">
+                <div className="blog-slider__wrp ">
+                <div className="blog-slider__item ">
+                    <div className={DtaNotesGenerales.estado === true ? 'blog-slider__img' : 'blog-slider__imgFinal'}>
                     
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt=""/>
                     </div>
-                    <div class="">
-                    <span class="blog-slider__code">26 December 2019</span>
-                    <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-                    <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-                    <a href="#" class="blog-slider__button">Nota Elaborada</a>
+                    <div className="">
+                    <span className="blog-slider__code">{DtaNotesGenerales.fecha}</span>
+                    <div className="blog-slider__title">{DtaNotesGenerales.titulo}</div>
+                    <div className="blog-slider__text">{DtaNotesGenerales.descripcion} </div>
+                    <div className={DtaNotesGenerales.estado === true ? 'blog-slider__button' : 'blog-slider__buttonFinal'} onClick={DtaNotesGenerales.estado == true ? ()=>UnCompletedNoteG(DtaNotesGenerales._id, DtaNotesGenerales.titulo, DtaNotesGenerales.estado, DtaNotesGenerales.descripcion, DtaNotesGenerales.fecha, DtaNotesGenerales.collectionUniversity) : ()=>CompletedNoteG(DtaNotesGenerales._id, DtaNotesGenerales.titulo, DtaNotesGenerales.estado, DtaNotesGenerales.descripcion, DtaNotesGenerales.fecha, DtaNotesGenerales.collectionUniversity )}>
+                        {DtaNotesGenerales.estado === true ? 'Activo' : 'Finalizado'}</div>
                     </div>
                 </div>            
                 </div>
                 </div>
             </div>
+            )
+        })}  
         </div>
      );
 }

@@ -11,6 +11,9 @@ import IsotopeLab from './Pages/IsotopeLab';
 import Spotify from './Pages/Spotify';
 import CollectionMaterias from './Pages/CollectionsMaterias';
 import CollectionTasks from './Pages/CollectionTasks';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import CookiesUninorte from './Pages/CookiesUninorte';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,13 +22,16 @@ root.render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route path="/Home" element={<Amatista />} />
-        <Route path="/University" element={<CollectionsUniversity />} />
+        <Route path="/University/:id" element={<CollectionsUniversity />} />
         <Route path="/User" element={<PerfilUser />} />
         <Route path="/NotesG" element={<Notasgenerales />} />
         <Route path="/Lab" element={<IsotopeLab />} />
         <Route path="/Spotify" element={<Spotify />} />
         <Route path="/Materias/:id" element={<CollectionMaterias />} />
-        <Route path="/Task" element={<CollectionTasks />} />
+        <Route path="/Tasks/:id" element={<CollectionTasks />} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/Register" element={<Register/>} />
+        <Route path="/CookiesUninorte" element={<CookiesUninorte/>} />
 
       </Routes>
     </Router>

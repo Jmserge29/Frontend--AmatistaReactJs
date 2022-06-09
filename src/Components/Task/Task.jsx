@@ -1,43 +1,35 @@
 
 
-const Task = ({DtaTasks}) => {
+const Task = ({DtaTasks,CompletedTask, UnCompletedTask, DeleteTask}) => {
     return ( 
         <div>
-        <div class="container mt-5 mb-3">
-            <div class="row">
+            <div className="row portfolio-container filter-container px-2">
             {DtaTasks.map((DtaTasks)=>{ 
                     return(
-                        <div class="col-md-4">
-                                <div class="card " style={{width: '20rem'}}>
-                                    <div class="card-body ">
-                                        <div className="d-flex flex-row align-items-center">
-                                            <div class="iconProgress">
-                                                <img className='iconProgress' src='https://cdn-icons-png.flaticon.com/512/7007/7007089.png'/>
-                                            </div>
-                                            <div class="ms-2 c-details">
-                                                <h5 class="card-title">Card title</h5>
-                                            </div>
-                                        </div>
-                                        <h6 class="card-subtitle mb-2 text-muted py-2">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="d-flex flex-row align-items-center">
-                                            <h6 class=" font-italic text-muted ">1 Mayo/ 2022</h6>
-                                            <div class="ms-2 c-details ">
-                                                <p class=" mx-3 card-title text-primary">Entregado</p>
-                                            </div>
-                                        </div>
-                                        <a  class="card-link">Eliminar</a>
-                                        <a  class="card-link">Editar</a>
-
-
-                                    </div>
-
-                                </div>
+                        <div className="container col-md-12 cardTaskMay my-2" key={DtaTasks._id}>
+                        <div className={DtaTasks.estado === false ? 'img-avatarUncompleted' : "img-avatar"}>
                         </div>
+                        <div className="card-text">
+                            <div className="portada">
+                            
+                            </div>
+                            <div className="title-total">   
+                            <div className="title">{DtaTasks.category}</div>
+                            <h2>{DtaTasks.name}</h2>
+                        
+                        <div className="desc">{DtaTasks.description}</div>
+                        <div className="actions">
+                            {DtaTasks.estado === true ? <button className='colorverde buttonTaskMay' onClick={()=>UnCompletedTask(DtaTasks._id, DtaTasks.name, DtaTasks.fechaEntrega, DtaTasks.difficulty, DtaTasks.estado, DtaTasks.description, DtaTasks.category, DtaTasks.materias)}><i className="bi bi-check-circle"></i></button> : <button className='colorrojizo buttonTaskMay' onClick={()=>CompletedTask(DtaTasks._id, DtaTasks.name, DtaTasks.fechaEntrega, DtaTasks.difficulty, DtaTasks.estado, DtaTasks.description, DtaTasks.category, DtaTasks.materias)}><i className="bi bi-x-circle"></i></button> }
+                            <button className='text-info buttonTaskMay'><i className="bi bi-pencil-square"></i></button>
+                            <button className='text-danger buttonTaskMay' onClick={()=>DeleteTask(DtaTasks._id)}><i className="bi bi-trash3"></i></button>
+                            {/* <button className='buttonTaskMay'><i className="bi bi-x-circle"></i></button> */}
+                        </div></div>
+                        
+                        </div>
+                    </div>
                     )
                 })}                           
             </div>
-        </div>
     </div>     );
 }
  

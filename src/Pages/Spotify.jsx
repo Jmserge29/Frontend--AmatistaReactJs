@@ -1,82 +1,45 @@
 
 const Spotify = () => {
 
-    const userpic = 'https://ps.w.org/wp-user-avatar/assets/icon-128x128.png?rev=1755722'
-    const userbanner = 'https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg'
-
-    const headerBanner = {
-		backgroundImage:`url(${userbanner})`,
-		height:'150px',
-		backgroundSize:'cover',
-		borderRadius:'20px 20px 0 0'
-	}
-    
-    function toThousands(nb)
-	{
-		return (nb / 1000) + 'K';
-	}
-
-	const userpicPositionning = {
-		position:'relative',
-		top:'-60px',
-		marginBottom: '-30px'
-	}
     return ( 
-        <div class="container mt-5 mb-5 bg-blue">
-            <div className="row justify-content-center align-items-center">
-                <div className="col-xl-6 col-md-8 col-lg-6 col-sm-10 ">
-
-                    {   /* De Aquí para abajo se importa como componente */}
-                    <div className='card shadow'>
-                    <div style={headerBanner}></div>
-                    
-                    <div className="border-bottom">
-                        <div
-                            style={userpicPositionning}
-                            className="text-center ">
-                            <img src={userpic} 
-                                className="rounded-circle" 
-                                />
-                        </div>
-                        
-                        <p className="h4 text-center">
-                            <span className="font-weight-bold">Introducción Programación de Videojuegos</span>
-                            {' '}
-                        </p>
-                        <p className="text-center grey mb-4">Barranquilla</p>
-                    </div>
-                    
-                    <div className="row justify-content-around text-center">
-                        <div class="col-md-4 py-2">
-                            <p>
-                                <span className="h4 font-weight-bold ">3,7.B</span>
-                                <br />
-                                <span className="small-txt grey">Followers</span>
-                            </p>
-                        </div>
-                        <div class="col-md-4 py-2">
-                            <p>
-                                <span className="h4 font-weight-bold ">1.M</span>
-                                <br />
-                                <span className="small-txt grey">Likes</span>
-                            </p>
-                        </div>
-                        <div class="col-md-4 py-2">
-                            <p>
-                                <span className="h4 font-weight-bold ">100k</span>
-                                <br />
-                                <span className="small-txt grey">Photos</span>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    {   /* Fin Del Componente */}
-                </div>
+    <section className="container">
+    
+    <div class="job">
+    <div class="CardSliderAmazine">
+      <div class="main-container">
+        <div class="searched-jobs">
+          <div class="job-cards">
+            <div class="job-card">
+              <div class="job-card-header">
+              <svg viewBox="0 -13 512 512" xmlns="http://www.w3.org/2000/svg" style={{backgroundColor: '#2e2882'}}>
+                <g fill="#feb0a5">
+                <path d="M256 92.5l127.7 91.6L512 92 383.7 0 256 91.5 128.3 0 0 92l128.3 92zm0 0M256 275.9l-127.7-91.5L0 276.4l128.3 92L256 277l127.7 91.5 128.3-92-128.3-92zm0 0" />
+                <path d="M127.7 394.1l128.4 92 128.3-92-128.3-92zm0 0" />
+                </g>
+                <path d="M512 92L383.7 0 256 91.5v1l127.7 91.6zm0 0M512 276.4l-128.3-92L256 275.9v1l127.7 91.5zm0 0M256 486.1l128.4-92-128.3-92zm0 0" fill="#feb0a5" />
+              </svg>
+              <div class="menu-dot"></div>
+              </div>
+              <div class="job-card-title">UI / UX Designer</div>
+              <div class="job-card-subtitle">
+              The User Experience Designer position exists to create compelling and digital user experience through excellent design...
+              </div>
+              <div class="job-detail-buttons">
+              <button class="search-buttons detail-button">Full Time</button>
+              <button class="search-buttons detail-button">Min. 1 Year</button>
+              <button class="search-buttons detail-button">Senior Level</button>
+              </div>
+              <div class="job-card-buttons">
+              <button class="search-buttons card-buttons">Apply Now</button>
+              <button class="search-buttons card-buttons-msg">Messages</button>
+              </div>
             </div>
+          </div>
         </div>
-
-
+      </div>
+    </div>
+    </div>
+    </section>
     );
 }
  

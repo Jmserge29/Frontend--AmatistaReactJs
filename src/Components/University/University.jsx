@@ -10,8 +10,8 @@ const University = ({DtaUniversidades}) => {
         <div className="row portfolio-container filter-container" >
         {DtaUniversidades.map((DtaUniversidades)=>{
                 return(
-                <div className="col-md-4 p-2  filter-app" onClick={() => history(`/Materias/${DtaUniversidades._id}`)}>
-                    <div className="portfolio-wrap">
+                <div className="col-md-4 p-2  filter-app" key={DtaUniversidades._id}>
+                    <div className="portfolio-wrap" onClick={() => history(`/Materias/${DtaUniversidades._id}`)}>
                         {DtaUniversidades.name === String('Universidad Del Norte') && <img src="https://orientacion.universia.net.co/imgs2011/imagenes/fachadanor-2013_04_25_175919.jpg" className="img-fluid" alt=""/>}
                         {DtaUniversidades.name === String('Universidad Del Atlántico') && <img src="https://www.las2orillas.co/wp-content/uploads/2016/01/Universidad-Atlantico.jpg" className="img-fluid" alt=""/>}
                         {DtaUniversidades.name === String('Universidad Pontificia Bolivariana') && <img src="https://www.upb.edu.co/es/imagenes/img-interna-benificios-acreditacion-upbgga-1464190197299.jpg" className="img-fluid" alt=""/>}
